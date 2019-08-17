@@ -1,0 +1,19 @@
+.headerContainer {
+    margin: 1.5rem;
+}
+
+.liLink {
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+.ulLink {
+    list-style: none;
+    float: right;
+    margin: 0rem;
+}
+
+.title {
+    display: inline-block;
+    margin: 0rem;
+}
