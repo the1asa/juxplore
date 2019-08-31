@@ -1,0 +1,21 @@
+.circle { 
+    width: 20px;
+    height: 20px;
+    background: blue; 
+    -moz-border-radius: 70px; 
+    -webkit-border-radius: 70px; 
+    border-radius: 70px;
+    line-height: 1.1;
+    align-self: flex-end;
+    margin-bottom: .5rem;
+}
+
+.container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    margin:0rem;
+}

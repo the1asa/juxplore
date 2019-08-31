@@ -1,19 +1,10 @@
 .headerContainer {
-    margin: 1.5rem;
-}
-
-.liLink {
-    display: inline-block;
-    margin-right: 1.5rem;
-}
-
-.ulLink {
-    list-style: none;
-    float: right;
-    margin: 0rem;
+    margin: 3rem 6rem 6rem 6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .title {
-    display: inline-block;
-    margin: 0rem;
+    align-self: flex-end;
 }

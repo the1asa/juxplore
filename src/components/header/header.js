@@ -6,19 +6,16 @@ import styles from './header.module.css';
 const ListLink = (props) => {
   const { to, children } = props;
   return (
-    <li className={styles.liLink}>
-      <Link to={to}>{children}</Link>
-    </li>
+    <Link to={to}>
+      <h2 className={styles.title}>{children}</h2>
+    </Link>
   );
 };
 export default () => (
   <div className={styles.headerContainer}>
     <Link to="/">
-      <h3 className={styles.title}>Tech & Stuff</h3>
+      <h1 className={styles.title}>Tech & Stuff</h1>
     </Link>
-    <ul className={styles.ulLink}>
-      <ListLink to="/">Home</ListLink>
-      <ListLink to="/about/">About</ListLink>
-    </ul>
+    <ListLink to="/about/">About</ListLink>
   </div>
 );

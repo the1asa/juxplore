@@ -1,9 +1,9 @@
 import React from 'react';
 import PageContainer from '../components/pageContainer';
+import PostCard from '../components/postCard/postCard';
 
 export default () => (
   <PageContainer>
-    <p>What a world.</p>
-    <img src="https://source.unsplash.com/random/650x425" alt="" />
+    <PostCard title="A blog post" link="/about" />
   </PageContainer>
 );
