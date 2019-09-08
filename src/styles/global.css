@@ -2,6 +2,10 @@ html {
     background-color: whitesmoke;
 }
 
+a {
+  background-image: none;
+}
+
 a:link {
   text-decoration: none;
   box-shadow: 0em;
@@ -12,10 +16,14 @@ a:visited {
   text-decoration: none;
 }
   
-a:hover {
-  text-decoration: none;
-}
-  
+a:hover > h1 {
+  color: red;
+} 
+
+a:hover > h2 {
+  color: red;
+} 
+
 a:active {
-  text-decoration: none;
+  text-decoration: underline;
 }
