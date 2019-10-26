@@ -7,8 +7,8 @@ export default (props) => {
   const { title, link } = props;
   return (
     <div className={styles.container}>
-      <Link className={styles.title} to={link}>
-        <h2>{title}</h2>
+      <Link to={link}>
+        <h2 className={styles.title}>{title}</h2>
       </Link>
       <div className={styles.circle} />
     </div>

@@ -10,14 +10,20 @@
     margin-bottom: 1rem;
     margin-left: 1rem;
     padding-left: 1rem;
+
+
 }
 
 .container {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    border: 1px solid;
+    border-color: lightgray;
+    padding: 0px 20px 5px 20px;
+    box-shadow: 3px 5px lightgray;
 }
 
 .title {
-    margin:0rem;
+    margin:1rem 1rem;
 }
