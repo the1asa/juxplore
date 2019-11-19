@@ -4,7 +4,7 @@ import PageContainer from '../components/pageContainer';
 import PostCard from '../components/postCard/postCard';
 
 export default ({ data }) => (
-  <PageContainer>
+  <PageContainer page="home">
     <div>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <PostCard title={node.frontmatter.title} link={node.fields.slug} />

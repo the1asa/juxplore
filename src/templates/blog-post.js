@@ -9,7 +9,6 @@ export default ({ data }) => {
   const post = data.markdownRemark;
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid;
   const displayFeatureImg = !featuredImgFluid.src.includes('dummy.png');
-  console.log(featuredImgFluid);
   return (
     <PageContainer>
       <div>

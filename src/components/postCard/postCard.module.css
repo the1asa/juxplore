@@ -6,12 +6,10 @@
     -webkit-border-radius: 70px; 
     border-radius: 70px;
     line-height: 1.1;
-    align-self: flex-end;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
+    align-self: center;
+    margin: 1rem 0rem 1rem 1rem;
+
     padding-left: 1rem;
-
-
 }
 
 .container {
@@ -22,8 +20,14 @@
     border-color: lightgray;
     padding: 0px 20px 5px 20px;
     box-shadow: 3px 5px lightgray;
+    transition: all .1s ease;
+
+}
+
+.container:hover {
+    transform: scale(1.1);
 }
 
 .title {
-    margin:1rem 1rem;
+    margin:1rem 1rem 1rem 0rem;
 }
