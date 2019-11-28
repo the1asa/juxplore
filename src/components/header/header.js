@@ -4,10 +4,10 @@ import { Link } from 'gatsby';
 import styles from './header.module.css';
 
 const ListLink = (props) => {
-  const { to, children } = props;
+  const { to, title } = props;
   return (
     <Link to={to}>
-      <div className={styles.circle}>{children}</div>
+      <h4 className={styles.link}>{title}</h4>
     </Link>
   );
 };
@@ -17,7 +17,10 @@ export default () => (
       <Link to="/">
         <h1 className={styles.title}>IC</h1>
       </Link>
-      <ListLink to="/about/" />
+      <div className={styles.linksContainer}>
+        <ListLink to="/" title="ARTICLES" />
+        <ListLink to="/about/" title="ABOUT" />
+      </div>
     </div>
   </div>
 );

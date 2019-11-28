@@ -1,6 +1,6 @@
 ---
 title: "Why is this site so...empty?"
-featuredImage: ../images/dummy.png
+featuredImage: ../../images/dummy.png
 date: "2019-09-08"
 ---
 
@@ -19,7 +19,7 @@ Taking stock of the web content landscape we can find a few arbitrary categories
 
 This site falls squarely into the blog (short for 'weblog'...huh) category. Let's take a look at Medium:
 
-![Medium screenshot](../images/medium_screenshot.png)
+![Medium screenshot](../../images/medium_screenshot.png)
 
 Almost nothing to it. The only design elements I see:
 - title, author, date, other content metadata up top
@@ -30,4 +30,6 @@ Almost nothing to it. The only design elements I see:
 
 Medium has extracted the bare necessities for readable web content. If authors and platforms didn't need to be credited, then the only thing left on the page would be text and an occasional picture. Simple enough. Medium is still around so they must be doing something right.
 
-So here is the site. Text and sometimes a picture. Easy to implement, easy to read. I am using Gatsby for the static content and am hosting on a serverless solution - I will follow up with some technical details in future posts. There is something funny about using the latest in web and cloud technologies to develop and host what could be implemented as a static HTML page. But this setup should make it easier to experiment with functionality for the site later on. Maybe a color changing content divider, or footnotes, or code snippets...
+So why not post on Medium? While Medium has a nice template, I like having the control. Every linked Medium article has a login prompt popup and currently homepage requires a login to even browse through its article titles. Other potentially irritating changes come and go, some good examples: https://medium.com/@nikitonsky/medium-is-a-poor-choice-for-blogging-bb0048d19133.
+
+So here is the site. Text and sometimes a picture. Easy to implement, easy to read. I am using Gatsby for the static content and am hosting on a serverless solution - I will follow up with some technical details. There is something funny about using the latest in web and cloud technologies to develop and host what could be implemented as a static HTML page. But this setup should make it easier to experiment with functionality for the site later on. Maybe a color changing content divider, or footnotes, or code snippets...

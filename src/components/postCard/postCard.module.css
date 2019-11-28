@@ -1,16 +1,4 @@
-.circle { 
-    width: 20px;
-    height: 20px;
-    background: blue; 
-    -moz-border-radius: 70px; 
-    -webkit-border-radius: 70px; 
-    border-radius: 70px;
-    line-height: 1.1;
-    align-self: center;
-    margin: 1rem 0rem 1rem 1rem;
-
-    padding-left: 1rem;
-}
+@import '../../styles/colors.css';
 
 .container {
     display:flex;
@@ -21,13 +9,72 @@
     padding: 0px 20px 5px 20px;
     box-shadow: 3px 5px lightgray;
     transition: all .1s ease;
-
 }
 
-.container:hover {
-    transform: scale(1.1);
+.date {
+    align-self: center;
+    margin: 1rem 0rem 1rem 1rem;
+    font-family: "Ubuntu";
 }
 
 .title {
     margin:1rem 1rem 1rem 0rem;
+    transition: color 0.25s;
+    font-family: "Ubuntu";
 }
+
+.container:hover .title {
+    color: var(--highlight-color);
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .date {
+        align-self: flex-start;
+        margin-left: 0rem;
+        margin-top: 0rem;
+    }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .date {
+        align-self: flex-start;
+        margin-left: 0rem;
+        margin-top: 0rem;
+    }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 0) and (max-width: 480px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .date {
+        align-self: flex-start;
+        margin-left: 0rem;
+        margin-top: 0rem;
+    }
+}
+  

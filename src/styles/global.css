@@ -7,6 +7,11 @@ html {
   src: url("../fonts/Exo2-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
 a {
   background-image: none;
 }
@@ -19,16 +24,4 @@ a:link {
   
 a:visited {
   text-decoration: none;
-}
-  
-a:hover > h1 {
-  color: red;
-} 
-
-a:hover > h2 {
-  color: red;
-} 
-
-a:active {
-  text-decoration: underline;
 }

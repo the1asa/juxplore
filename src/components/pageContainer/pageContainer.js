@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import Header from '../header';
 import styles from './pageContainer.module.css';
 
 export default (props) => {
-  const { page, children } = props;
+  const { children, pageName } = props;
+  let pageStyle = '';
+
+  switch (pageName) {
+    case 'about':
+      pageStyle = styles.aboutContainer;
+      break;
+    default:
+      pageStyle = styles.container;
+  }
 
   return (
-    <div>
+    <Fragment>
       <Header />
-      <div className={styles.container}>{children}</div>
-    </div>
+
+      <div className={pageStyle}>{children}</div>
+    </Fragment>
   );
 };

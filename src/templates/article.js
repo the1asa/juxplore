@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styles from './templates.module.css';
@@ -9,13 +9,15 @@ export default ({ data }) => {
   const post = data.markdownRemark;
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid;
   const displayFeatureImg = !featuredImgFluid.src.includes('dummy.png');
+  const { title } = post.frontmatter;
   return (
     <PageContainer>
-      <div>
-        <h1 className={styles.title}>{post.frontmatter.title}</h1>
+      <Fragment>
+        <h1 className={styles.title}>{title}</h1>
+
         { displayFeatureImg ? <Img fluid={featuredImgFluid} /> : null}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      </Fragment>
     </PageContainer>
   );
 };
@@ -26,6 +28,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {
