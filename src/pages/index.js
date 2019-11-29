@@ -9,6 +9,8 @@ export default ({ data }) => {
     posts.push({ title: node.frontmatter.title, link: node.fields.slug, date: node.frontmatter.date });
   });
 
+  posts.sort((a, b) => b.date.localeCompare(a.date)); // most recent date first
+
   return (
     <PageContainer>
       <Fragment>
