@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import PageContainer from '../components/pageContainer';
 
@@ -26,7 +26,10 @@ export default () => (
 .
       </p>
       <p>
-        Contacts welcome at: ...
+        Contacts welcome
+        {' '}
+        <b><a href="mailto: asa@impracticalcuriosity.com">here</a></b>
+.
       </p>
     </div>
   </PageContainer>
