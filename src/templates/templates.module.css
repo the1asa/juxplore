@@ -2,3 +2,12 @@
     font-family: "Ubuntu";
     padding-bottom: 1rem;
 }
+
+.feature {
+    margin-bottom: 2rem;
+}
+
+.featureTitle {
+    margin-top: 1rem;
+    font-style: italic;
+}
