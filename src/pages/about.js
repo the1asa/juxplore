@@ -22,7 +22,7 @@ export default () => (
       <p>
       I currently work as a software engineer, you can read more about how that happened
         {' '}
-        <b><Link to="articles/a-tale-of-two-brains/">here</Link></b>
+        <b><Link to="../articles/a-tale-of-two-brains/">here</Link></b>
 .
       </p>
       <p>
