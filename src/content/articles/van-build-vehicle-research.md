@@ -1,5 +1,6 @@
 ---
-title: "Van Build Series: Finding a vehicle"
+title: "Van Build Series: Vehicle research"
+subtitle: "How we narrowed down to a vehicle make and model..."
 featuredImage: ../../images/finishedside.JPEG
 featuredImageTitle: "A side view of the finished conversion"
 date: "2020-11-30"
@@ -38,14 +39,15 @@ An overview of some vehicle types:
 
 Here is our thought process for each vehicle type, we'll use the above factors to evaluate.
 
-**RV type A**
+<h2 style="font-size:32px; font-family: Ubuntu;">RV type A</h2>
+
 ![RV type A](../../images/rv_typea.png)
 
 This is the luxury option. It has all the amenities that we want built in with plenty of space to spare. However, it does not meet our needs in most other respects.
 
 **Cost**: By far the priciest option. Anywhere from $70-150k in the used market.  
 **Parking**: Difficult. Will take up multiple spaces and be difficult to turn. Its length is a major downside as it will severely limit the number of places you can drive and park inside cities and suburbs.  
-**Miles per gallon**: Abysmal. >10mpg for many models.  
+**Miles per gallon**: Abysmal. Less than 10mpg for many models.  
 **Age + mileage**: Easy to find a variety of used models with low mileage.  
 **Reliability + repair costs**: Tough to say with so many model options. But generally will cost more than the equivalent repair for a smaller vehicle. Depending on model parts may be more difficult to source. And with more amenities built in, there is more that can go wrong.  
 **Resale value**: Not great. All vehicles depreciate fairly quickly, especially if new. The higher the purchase price, the greater the total loss to depreciation.   
@@ -53,17 +55,19 @@ This is the luxury option. It has all the amenities that we want built in with p
 **Interior dimensions**: Great, there is lots of space for storage and all amenities are included.  
 **Offroad ability**: I wouldn't want to test it.  
 
-**RV type C**
+<h2 style="font-size:32px; font-family: Ubuntu;">RV type C</h2>
+
 ![RV type C](../../images/rv_typec.png)
 
 This is a scaled down version of a type A. It is a cab built on a van frame. It also has all the amenities built in, but has many of the same limitations as the type A. The comparisons are so similar I only include the differing factors.
 
 **Cost:** Slightly less expensive than the type A. Anywhere from $30-120k in the used market.  
 **Parking:** Slightly easier than the type A, depending on the model length you get.   
-**Miles per gallon:** Slightly btter than the type A. >10mpg for many models, other models are in the teens.  
+**Miles per gallon:** Slightly btter than the type A. Less than 10mpg for many models, other models are in the teens.  
 **Offroad ability:** Slightly better than type A, again depending on the model.  
 
-**Trailer (5th wheel)**
+<h2 style="font-size:32px; font-family: Ubuntu;">Trailer (5th wheel)</h2>
+
 ![Trailer (5th wheel)](../../images/trailer.jpg)
 
 A trailer is designed to be towed by another vehicle. These come in all kinds of sizes, but let's assume that it is around 20 feet in order to be able to house everything we want.
@@ -77,7 +81,8 @@ A trailer is designed to be towed by another vehicle. These come in all kinds of
 **Stealth:** Non existent. Everyone will know you are camping.  
 **Interior dimensions:** Great, there is lots of space for storage and all amenities are included.  
 
-**Camper van**
+<h2 style="font-size:32px; font-family: Ubuntu;">Camper van</h2>  
+
 ![Camper van](../../images/finishedside.JPEG)
 
 This is the option we went with. I see a camper van as any vehicle that has been modified for more comfortable long term travel. It might be a passenger van, school bus, delivery vehicle, decommissioned ambulance, hatchback...whatever. There are a few companies that will professionally transform your vehicle into a recreational vehicle using either a custom design or some prefabricated designs they have come up with. But in our search, most companies had waiting lists and charged more than we were comfortable with. So the following pros/cons only take into account doing the 'transformation work' ourselves. 
@@ -93,7 +98,7 @@ This is the option we went with. I see a camper van as any vehicle that has been
 
 The camper van came closest to checking all our boxes. We ended up narrowing our choices down to utility vans. The three most popular are the Ford Transit, the Mercedes Sprinter, and the Ram Promaster.
 
-**Sprinter vs. Transit vs. Promaster**
+<h2 style="font-size:32px; font-family: Ubuntu;">Sprinter vs. Transit vs. Promaster</h2>  
 
 We knew we wanted a fairly recent model to avoid upfront repairs and maximize resale values. We also wanted to spend under $20k.
 

@@ -14,10 +14,10 @@ export default ({ data }) => {
   return (
     <PageContainer>
       <Fragment>
-        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.title}>{title}</h2>
         <div className={styles.feature}>
-          { displayFeatureImg ? <Img fluid={featuredImgFluid} /> : null}
-          { featuredImageTitle ? <h4 className={styles.featureTitle}>{featuredImageTitle}</h4> : null }
+          { displayFeatureImg && <Img fluid={featuredImgFluid} /> }
+          { featuredImageTitle && <h4 className={styles.featureTitle}>{featuredImageTitle}</h4> }
         </div>
         
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

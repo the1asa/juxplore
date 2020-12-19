@@ -1,6 +1,6 @@
 .container {
   margin: 3rem auto;
-  max-width: 35%;
+  max-width: 45%;
 }
 
 .aboutContainer {
@@ -15,7 +15,7 @@
 
 @media (min-width: 1281px) {
   .container {
-    max-width: 35%;
+    max-width: 45%;
   }
 
   .aboutContainer {
@@ -75,7 +75,7 @@
 
 @media (min-width: 481px) and (max-width: 767px) {
   .container {
-    max-width: 75%;
+    max-width: 85%;
   }
 
   .aboutContainer {

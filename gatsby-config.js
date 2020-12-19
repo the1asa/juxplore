@@ -6,9 +6,21 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Portfolio',
+    title: 'Impractical Curiosity',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Impractical Curiosity`,
+        short_name: `IC`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `static/favicon.png`,
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',

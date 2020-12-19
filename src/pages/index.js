@@ -6,7 +6,13 @@ import PostCard from '../components/postCard/postCard';
 export default ({ data }) => {
   const posts = [];
   data.allMarkdownRemark.edges.forEach(({ node }) => {
-    posts.push({ title: node.frontmatter.title, link: node.fields.slug, date: node.frontmatter.date });
+    posts.push({ 
+      title: node.frontmatter.title, 
+      subtitle: node.frontmatter.subtitle,
+      link: node.fields.slug, 
+      date: node.frontmatter.date,
+      image: node.frontmatter.featuredImage.childImageSharp.fluid
+    });
   });
 
   // most recent date first
@@ -15,8 +21,8 @@ export default ({ data }) => {
   return (
     <PageContainer>
       <Fragment>
-        { posts.map(({ title, link, date }) => (
-          <PostCard title={title} link={link} date={date} />
+        { posts.map(({ title, subtitle, link, date, image }) => (
+          <PostCard title={title} subtitle={subtitle} link={link} date={date} image={image}/>
         ))}
       </Fragment>
     </PageContainer>
@@ -32,7 +38,15 @@ export const query = graphql`
           id
           frontmatter {
             title
+            subtitle
             date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           fields {
             slug
