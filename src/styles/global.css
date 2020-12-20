@@ -1,5 +1,7 @@
+@import 'colors.css';
+
 html {
-    background-color: whitesmoke;
+    background-color: var(--site-background-color);
 }
 
 @font-face {

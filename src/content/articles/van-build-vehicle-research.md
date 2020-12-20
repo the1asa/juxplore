@@ -39,7 +39,7 @@ An overview of some vehicle types:
 
 Here is our thought process for each vehicle type, we'll use the above factors to evaluate.
 
-<h2 style="font-size:32px; font-family: Ubuntu;">RV type A</h2>
+<h3 style="font-size:32px; font-family: Ubuntu;">RV type A</h3>
 
 ![RV type A](../../images/rv_typea.png)
 
@@ -55,7 +55,7 @@ This is the luxury option. It has all the amenities that we want built in with p
 **Interior dimensions**: Great, there is lots of space for storage and all amenities are included.  
 **Offroad ability**: I wouldn't want to test it.  
 
-<h2 style="font-size:32px; font-family: Ubuntu;">RV type C</h2>
+<h3 style="font-size:32px; font-family: Ubuntu;">RV type C</h3>
 
 ![RV type C](../../images/rv_typec.png)
 
@@ -66,7 +66,7 @@ This is a scaled down version of a type A. It is a cab built on a van frame. It 
 **Miles per gallon:** Slightly btter than the type A. Less than 10mpg for many models, other models are in the teens.  
 **Offroad ability:** Slightly better than type A, again depending on the model.  
 
-<h2 style="font-size:32px; font-family: Ubuntu;">Trailer (5th wheel)</h2>
+<h3 style="font-size:32px; font-family: Ubuntu;">Trailer (5th wheel)</h3>
 
 ![Trailer (5th wheel)](../../images/trailer.jpg)
 
@@ -81,7 +81,7 @@ A trailer is designed to be towed by another vehicle. These come in all kinds of
 **Stealth:** Non existent. Everyone will know you are camping.  
 **Interior dimensions:** Great, there is lots of space for storage and all amenities are included.  
 
-<h2 style="font-size:32px; font-family: Ubuntu;">Camper van</h2>  
+<h3 style="font-size:32px; font-family: Ubuntu;">Camper van</h3>  
 
 ![Camper van](../../images/finishedside.JPEG)
 
@@ -98,7 +98,7 @@ This is the option we went with. I see a camper van as any vehicle that has been
 
 The camper van came closest to checking all our boxes. We ended up narrowing our choices down to utility vans. The three most popular are the Ford Transit, the Mercedes Sprinter, and the Ram Promaster.
 
-<h2 style="font-size:32px; font-family: Ubuntu;">Sprinter vs. Transit vs. Promaster</h2>  
+<h3 style="font-size:32px; font-family: Ubuntu;">Sprinter vs. Transit vs. Promaster</h3>  
 
 We knew we wanted a fairly recent model to avoid upfront repairs and maximize resale values. We also wanted to spend under $20k.
 

@@ -1,58 +1,10 @@
-@import '../../styles/colors.css';
-
-.container {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 1px solid;
-    border-color: lightgray;
-    border-style: none none solid none;
-    padding: 0px 20px 5px 20px;
-    transition: all .1s ease;
-    margin-bottom: 1rem;
-    align-content: center;
-}
-
-.titleContainer {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-}
-
-.subtitle {
-    margin: 0 .5rem 0 0;
-    font-size: 8px;
-    color: black;   
-}
-
 .image {
     margin-bottom: 10px;
     min-width: 33%;
     height: 130px;
 }
 
-.date {
-    margin: .75rem 0rem .25rem 0rem;
-    font-family: "Ubuntu";
-    align-self: flex-start;
-}
-
-.title {
-    margin: 0rem 1rem .25rem 0rem;
-    transition: color 0.25s;
-    font-family: "Ubuntu";
-    font-weight: bold;
-}
-
-.container:hover .title {
-    color: var(--highlight-color);
-}
-
 @media (max-width: 767px) {
-    .subtitle {
-        display: none;
-    }
-
     .image {
         height: 90px;
     }

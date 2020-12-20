@@ -1,25 +1,25 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import styles from './templates.module.css';
+import styled from 'styled-components';
 
 import PageContainer from '../components/pageContainer';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid;
-  const featuredImageTitle = post.frontmatter.featuredImageTitle;
+  const { featuredImageTitle } = post.frontmatter;
   const displayFeatureImg = !featuredImgFluid.src.includes('dummy.png');
   const { title } = post.frontmatter;
   return (
     <PageContainer>
       <Fragment>
-        <h2 className={styles.title}>{title}</h2>
-        <div className={styles.feature}>
+        <Title>{title}</Title>
+        <Feature>
           { displayFeatureImg && <Img fluid={featuredImgFluid} /> }
-          { featuredImageTitle && <h4 className={styles.featureTitle}>{featuredImageTitle}</h4> }
-        </div>
-        
+          { featuredImageTitle && <FeatureTitle>{featuredImageTitle}</FeatureTitle> }
+        </Feature>
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </Fragment>
     </PageContainer>
@@ -44,4 +44,18 @@ export const query = graphql`
       }
     }
   }
+`;
+
+const Title = styled.h2`
+  font-family: "Ubuntu";
+  padding-bottom: 1rem;
+`;
+
+const Feature = styled.div`
+  margin-bottom: 2rem;
+`;
+
+const FeatureTitle = styled.h4`
+  margin-top: 1rem;
+  font-style: italic;
 `;

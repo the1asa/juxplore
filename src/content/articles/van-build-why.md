@@ -18,4 +18,4 @@ It's worth mentioning here that we had only a hazy idea of the total costs, both
 
 We are fortunate that we had the ability to afford what we wanted. I'm sure that we could have gone cheaper, but it would have taken significantly more time and some trade offs likely would have made the project cost more in the long term. We plan to use the van for years to come, but had we only wanted something for a few weeks, it absolutely would have made more sense to rent something.
 
-The single most expensive item is the vehicle. In the **[next post](../van-build-finding-a-vehicle)** we go through our thought process, some tips, and things we wish we had known when finding a vehicle to convert.
+The single most expensive item is the vehicle. In the **[next post](../van-build-vehicle-research/)** we go through our thought process, some tips, and things we wish we had known when finding a vehicle to convert.
