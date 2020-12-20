@@ -52,4 +52,8 @@
     .subtitle {
         display: none;
     }
+
+    .image {
+        height: 90px;
+    }
 }
