@@ -58,8 +58,11 @@ const Subtitle = styled.p`
   margin: 0 .5rem 0 0;
   font-size: 8px;
   color: black;  
+  display: none;
 
-  ${mediaQueries('med')` display: none; `};
+  ${mediaQueries('md')` display: block; `};
+  ${mediaQueries('lg')` display: block; `};
+  ${mediaQueries('xl')` display: block; `};
 `;
 
 const Date = styled.h6`
