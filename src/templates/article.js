@@ -55,7 +55,7 @@ const Feature = styled.div`
   margin-bottom: 2rem;
 `;
 
-const FeatureTitle = styled.h4`
+const FeatureTitle = styled.h5`
   margin-top: 1rem;
   font-style: italic;
 `;
