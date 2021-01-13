@@ -1,7 +1,7 @@
 ---
 title: "Van Build Series: Why do it?"
 subtitle: "Our pandemic beach trip led to an epiphany..."
-featuredImage: ../../images/finishedrear.jpg
+featuredImage: ../../images/interior_rear.JPEG
 featuredImageTitle: "A rear view of the finished conversion"
 date: "2020-11-21"
 ---

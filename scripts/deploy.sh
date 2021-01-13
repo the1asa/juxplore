@@ -1,1 +1,1 @@
-aws s3 sync public/. s3://impracticalcuriosity.com/
+aws s3 sync public/. s3://amazon-cloudfront-secure-static-site-s3bucketroot-1v1lvxj6xehus

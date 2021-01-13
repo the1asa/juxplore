@@ -6,14 +6,22 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Impractical Curiosity',
+    title: 'Juxplore',
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-s3',
+      options: {
+        bucketName: 'juxplore.com',
+        protocol: 'https',
+        hostname: 'www.juxplore.com',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Impractical Curiosity',
-        short_name: 'IC',
+        name: 'Juxplore',
+        short_name: 'JX',
         start_url: '/',
         background_color: '#f7f0eb',
         theme_color: '#a2466c',
@@ -25,7 +33,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-plausible',
       options: {
-        domain: 'impracticalcuriosity.com',
+        domain: 'juxplore.com',
       },
     },
     'gatsby-plugin-sharp',

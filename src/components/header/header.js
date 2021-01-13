@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles/mediaQueries';
+import EmailSub from '../emailSub';
 
 const ListLink = (props) => {
   const { to, title } = props;
@@ -11,13 +12,15 @@ const ListLink = (props) => {
     </Link>
   );
 };
+
 export default () => (
   <HeaderBorder>
     <HeaderContainer>
       <Link to="/">
-        <Title>IC</Title>
+        <Title>JX</Title>
       </Link>
       <LinksContainer>
+        <EmailSub />
         <ListLink to="/" title="ARTICLES" />
         <ListLink to="/about/" title="ABOUT" />
       </LinksContainer>
@@ -58,6 +61,7 @@ const LinksContainer = styled.div`
 `;
 
 const LinkTitle = styled.h4`
+  font-size: 18px;
   font-family: "Ubuntu", sans-serif;
   margin: 0.5rem;
   transition: all 0.25s;

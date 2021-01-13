@@ -5,7 +5,7 @@ import PageContainer from '../components/pageContainer';
 
 export default () => (
   <PageContainer pageName="about">
-    <Title><b>Impractical Curiosity</b></Title>
+    {/* <Title><b>Juxplore</b></Title> */}
     <p>
       <i>
         &quot;People say: idle curiosity. The one thing that curiosity cannot be is idle.&quot;
@@ -14,7 +14,7 @@ export default () => (
       - Leo Roston
     </p>
     <p>
-      Welcome to my tiny corner of the internet. I created this site to share my thoughts and projects - and to explore new interests, however impractical.
+      Welcome to my tiny corner of the internet. I created this site to share my thoughts and projects and to explore new interests.
     </p>
     <p>
       I currently work as a software engineer, you can read more about how that happened
@@ -25,7 +25,7 @@ export default () => (
     <p>
       Contacts welcome
       {' '}
-      <b><a href="mailto: asa@impracticalcuriosity.com">here</a></b>
+      <b><a href="mailto: asa@juxplore.com">here</a></b>
       .
     </p>
   </PageContainer>
