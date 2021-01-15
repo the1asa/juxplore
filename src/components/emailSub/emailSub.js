@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal';
 
-// const Modal = (props) => {
-// };
-
-
 const customStyles = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.75)'
@@ -22,21 +18,35 @@ const customStyles = {
   }
 };
 
+function isEmailValid(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 export default () => {
-  // const [displayModal, setDisplayModal] = useState(false);
+  const [displayModal, setDisplayModal] = useState(false);
+  const [email, setEmail] = useState('');
 
-  // const openModal = () => setDisplayModal(true);
-
-  const [displayModal, setDisplayModal] = React.useState(false);
   const openModal = () => { setDisplayModal(true); };
   const closeModal = () => { setDisplayModal(false); };
+  async function postEmail() {
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: process.env.GATSBY_MAIL_KEY },
+      body: JSON.stringify({
+        email,
+        subscribed: false
+      })
+    };
+    try {
+      await fetch('https://api.mailbluster.com/api/leads', options);
+      closeModal();
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   return (
     <div>
-      {/* { displayModal
-        ? <span>test</span>
-        : <Button onClick={openModal}>SUBSCRIBE</Button>
-      } */}
       <SubButton onClick={openModal}>SUBSCRIBE</SubButton>
       <Modal
         isOpen={displayModal}
@@ -45,8 +55,8 @@ export default () => {
       >
         <Column>
           <Text>If you would like to receive updates when new articles are published, please enter your email.</Text>
-          <Input type="email" placeholder="mail@example.com" />
-          <PostButton onClick={closeModal}>SUBSCRIBE NOW</PostButton>
+          <Input type="email" placeholder="mail@example.com" onChange={e => setEmail(e.target.value)} />
+          <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>SUBSCRIBE NOW</PostButton>
         </Column>
       </Modal>
     </div>
@@ -72,9 +82,16 @@ const PostButton = styled.button`
   width: 80%;
   padding: 10px;
 
-  &:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-  }
+  ${props => (props.disabled
+    ? `
+    opacity: 0.5;
+    cursor: not-allowed;
+    `
+    : `
+    &:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    `)};
 `;
 
 const Column = styled.div`
@@ -93,7 +110,7 @@ const Text = styled.span`
 `;
 
 const SubButton = styled.button`
-  margin: 0 1rem 0 1rem;
+  margin: 0 1rem 0rem 1rem;
   background-color: var(--site-background-color);
   border-color: var(--highlight-color);
   color: var(--highlight-color);
