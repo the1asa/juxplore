@@ -53,6 +53,7 @@ export default () => {
       await fetch('https://api.mailbluster.com/api/leads', options);
       setSubscribed(true);
     } catch (err) {
+      console.log('error', err);
       setError(err);
     }
 
@@ -66,12 +67,16 @@ export default () => {
         isOpen={displayModal}
         onRequestClose={closeModal}
         style={customStyles}
+        ariaHideApp={false}
       >
         { error
             && (
             <Column>
               <Text>Something went wrong, please try again.</Text>
-              <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>RESUBMIT</PostButton>
+              { isSaving
+                ? <SpinnerWrapper><Spinner /></SpinnerWrapper>
+                : <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>RESUBMIT</PostButton>
+                }
             </Column>
             )
           }
