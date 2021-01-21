@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal';
+import Spinner from '../spinner';
 
 const customStyles = {
   overlay: {
@@ -25,10 +26,20 @@ function isEmailValid(email) {
 export default () => {
   const [displayModal, setDisplayModal] = useState(false);
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(null);
+  const [subscribed, setSubscribed] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   const openModal = () => { setDisplayModal(true); };
-  const closeModal = () => { setDisplayModal(false); };
+  const closeModal = () => {
+    setEmail('');
+    setError(null);
+    setSubscribed(false);
+    setDisplayModal(false);
+  };
   async function postEmail() {
+    setIsSaving(true);
+
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: process.env.GATSBY_MAIL_KEY },
@@ -37,12 +48,15 @@ export default () => {
         subscribed: false
       })
     };
+
     try {
       await fetch('https://api.mailbluster.com/api/leads', options);
-      closeModal();
+      setSubscribed(true);
     } catch (err) {
-      console.error(err);
+      setError(err);
     }
+
+    setIsSaving(false);
   }
 
   return (
@@ -53,11 +67,34 @@ export default () => {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <Column>
-          <Text>If you would like to receive updates when new articles are published, please enter your email.</Text>
-          <Input type="email" placeholder="mail@example.com" onChange={e => setEmail(e.target.value)} />
-          <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>SUBSCRIBE NOW</PostButton>
-        </Column>
+        { error
+            && (
+            <Column>
+              <Text>Something went wrong, please try again.</Text>
+              <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>RESUBMIT</PostButton>
+            </Column>
+            )
+          }
+        { subscribed
+            && (
+            <Column>
+              <Text>Got it! Please whitelist asa@juxplore.com to ensure that my emails won't go to your spam folder. You can unsubscribe at any time using the link in my emails.</Text>
+              <PostButton onClick={closeModal}>CLOSE</PostButton>
+            </Column>
+            )
+          }
+        { !error && !subscribed
+              && (
+              <Column>
+                <Text>If you would like to receive updates when new articles are published, please enter your email.</Text>
+                <Input type="email" placeholder="mail@example.com" onChange={e => setEmail(e.target.value)} />
+                { isSaving
+                  ? <SpinnerWrapper><Spinner /></SpinnerWrapper>
+                  : <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>SUBSCRIBE NOW</PostButton>
+                }
+              </Column>
+              )
+          }
       </Modal>
     </div>
   );
@@ -70,6 +107,18 @@ const Input = styled.input`
   width: 80%;
   font-size: 20px;
   font-family: "Ubuntu", sans-serif;
+`;
+
+const SpinnerWrapper = styled.div`
+  margin: 0.25rem;
+  background-color: var(--highlight-color);
+  border-color: var(--highlight-color);
+  width: 80%;
+  padding; 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 `;
 
 const PostButton = styled.button`
