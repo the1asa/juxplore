@@ -1,22 +1,22 @@
 import Typography from 'typography';
 
-import lincolnTheme from 'typography-theme-lincoln';
+import theme from 'typography-theme-ocean-beach';
 
-lincolnTheme.googleFonts = [
-  {
-    name: 'Open Sans',
-    styles: [
-      '300',
-      '400',
-      '500',
-      '600',
-      '700'
-    ],
-  }
-];
-lincolnTheme.headerFontFamily = ['Open Sans', 'sans-serif'];
-lincolnTheme.bodyFont = ['Open Sans', 'sans-serif'];
+// theme.googleFonts = [
+//   {
+//     name: 'Open Sans',
+//     styles: [
+//       '300',
+//       '400',
+//       '500',
+//       '600',
+//       '700'
+//     ],
+//   }
+// ];
+// theme.headerFontFamily = ['Open Sans', 'sans-serif'];
+// theme.bodyFont = ['Open Sans', 'sans-serif'];
 
-const typography = new Typography(lincolnTheme);
+const typography = new Typography(theme);
 
 export default typography;

@@ -29,7 +29,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   border: 1px solid;
-  border-color: lightgray;
+  border-color: var(--border-color);
   border-style: none none solid none;
   padding: 0px 20px 5px 20px;
   transition: all .1s ease;
@@ -46,8 +46,8 @@ const TitleContainer = styled.div`
 const Title = styled.h4`
   margin: 0rem 1rem .25rem 0rem;
   transition: color 0.25s;
-  font-family: "Ubuntu";
   font-weight: bold;
+  color: var(--primary-text-color);
 
   ${Container}:hover & {
     color: var(--highlight-color);
@@ -56,8 +56,7 @@ const Title = styled.h4`
 
 const Subtitle = styled.p`
   margin: 0 .5rem 0 0;
-  font-size: 8px;
-  color: black;  
+  color: var(--primary-text-color);
   display: none;
 
   ${mediaQueries('md')` display: block; `};
@@ -66,7 +65,7 @@ const Subtitle = styled.p`
 `;
 
 const Date = styled.h6`
+  color: var(--primary-text-color);
   margin: .75rem 0rem .25rem 0rem;
-  font-family: "Ubuntu";
   align-self: flex-start;
 `;

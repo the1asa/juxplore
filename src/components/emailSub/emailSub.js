@@ -3,9 +3,12 @@ import styled from 'styled-components';
 import Modal from 'react-modal';
 import Spinner from '../spinner';
 
+import { Email } from '../icons/icons';
+
 const customStyles = {
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.75)'
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    zIndex: 999999
   },
   content: {
     top: '50%',
@@ -23,7 +26,7 @@ function isEmailValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-export default () => {
+export default ({ isBurger }) => {
   const [displayModal, setDisplayModal] = useState(false);
   const [email, setEmail] = useState('');
   const [error, setError] = useState(null);
@@ -53,7 +56,6 @@ export default () => {
       await fetch('https://api.mailbluster.com/api/leads', options);
       setSubscribed(true);
     } catch (err) {
-      console.log('error', err);
       setError(err);
     }
 
@@ -62,7 +64,15 @@ export default () => {
 
   return (
     <div>
-      <SubButton onClick={openModal}>SUBSCRIBE</SubButton>
+      { isBurger
+        ? (
+          <Row onClick={openModal}>
+            <EmailIcon />
+            <LinkTitle>SUBSCRIBE</LinkTitle>
+          </Row>
+        )
+        : <SubButton onClick={openModal}>SUBSCRIBE</SubButton>
+      }
       <Modal
         isOpen={displayModal}
         onRequestClose={closeModal}
@@ -105,6 +115,10 @@ export default () => {
   );
 };
 
+const EmailIcon = styled(Email)`
+  color: whitesmoke;
+`;
+
 const Input = styled.input`
   padding: 10px;
   margin: 0.25rem;
@@ -131,7 +145,7 @@ const PostButton = styled.button`
   font-family: "Ubuntu", sans-serif;
   font-size: 20px;
   background-color: var(--highlight-color);
-  color: var(--site-background-color);
+  color: white;
   border-color: var(--highlight-color);
   width: 80%;
   padding: 10px;
@@ -161,17 +175,40 @@ const Text = styled.span`
   font-size: 18px;
   margin: 0.5rem;
   text-align: center;
+  color: black;
 `;
 
 const SubButton = styled.button`
   margin: 0 1rem 0rem 1rem;
-  background-color: var(--site-background-color);
+  background-color: var(--primary-background-color);
   border-color: var(--highlight-color);
   color: var(--highlight-color);
   font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
+  cursor: pointer;
+  font-size: 10px;
   &:hover {
     background-color: var(--highlight-color);
-    color: var(--site-background-color);
+    color: var(--primary-background-color);
+    font-color: var(--primary-background-color);
+  }
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 0.5rem;
+  cursor: pointer;
+`;
+
+const LinkTitle = styled.span`
+  font-size: 10px;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.25s;
+  margin-left: 0.25rem;
+  color: whitesmoke;
+
+  &:hover {
+    color: var(--highlight-color);
   }
 `;

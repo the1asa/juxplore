@@ -46,9 +46,8 @@ export const query = graphql`
   }
 `;
 
-const Title = styled.h2`
-  font-family: "Ubuntu";
-  padding-bottom: 1rem;
+const Title = styled.h1`
+  color: var(--primary-text-color);
 `;
 
 const Feature = styled.div`
@@ -58,4 +57,5 @@ const Feature = styled.div`
 const FeatureTitle = styled.h5`
   margin-top: 1rem;
   font-style: italic;
+  color: var(--primary-text-color);
 `;

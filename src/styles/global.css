@@ -1,7 +1,48 @@
-@import 'colors.css';
-
 html {
-    background-color: var(--site-background-color);
+  --primary-background-color: whitesmoke;
+  --primary-text-color: black;
+  --highlight-color: #b600ff;
+  --logo-background-color: black;
+  --logo-text-color: whitesmoke;
+  --border-color: lightgray;
+}
+
+html.dark {
+  --primary-background-color: #0e141b;
+  --primary-text-color: lightgray;
+  --highlight-color: #b600ff;
+  --logo-background-color: whitesmoke;
+  --logo-text-color: black;
+  --border-color: #2e2e2e;
+}
+
+body {
+  background: var(--primary-background-color);
+  color: var(--primary-text-color);
+}
+
+h1 {
+  color: var(--primary-text-color);
+}
+
+h2 {
+  color: var(--primary-text-color);
+}
+
+h3 {
+  color: var(--primary-text-color);
+}
+
+h4 {
+  color: var(--primary-text-color);
+}
+
+h5 {
+  color: var(--primary-text-color);
+}
+
+h6 {
+  color: var(--primary-text-color);
 }
 
 @font-face {
@@ -16,6 +57,7 @@ html {
 
 a {
   background-image: none;
+  color: var(--highlight-color);
 }
 
 a:link {

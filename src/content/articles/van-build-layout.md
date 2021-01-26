@@ -20,7 +20,7 @@ Before we decided on a vehicle we spent some time deliberating on what we wanted
 
 I watched countless videos on YouTube for inspiration on what to do for the layout. No single video had everything, but by stealing bits and pieces from each, we came up with a mishmash that might work.
 
-<h4 style="font-size:32px; font-family: Ubuntu;">Layout</h4>
+## Layout
 
 We spent some time thinking up different configurations and drawing them out. Here is a configuration where we considered having the front seats swivel 180 degrees with a drop down table.
 

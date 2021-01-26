@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "juxplore",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "juxplore site",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,7 @@
     "invalidate": "./scripts/invalidate.sh",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby build && gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
@@ -40,13 +40,14 @@
     "gatsby-transformer-remark": "^2.6.21",
     "gatsby-transformer-sharp": "^2.2.16",
     "react": "^16.8.6",
+    "react-burger-menu": "^3.0.3",
     "react-dom": "^16.8.6",
     "react-modal": "^3.12.1",
     "react-typography": "^0.16.19",
     "styled-components": "^5.2.1",
     "typeface-exo-2": "0.0.72",
     "typography": "^0.16.19",
-    "typography-theme-lincoln": "^0.16.19"
+    "typography-theme-ocean-beach": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
