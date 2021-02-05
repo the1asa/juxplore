@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { slide as Menu } from 'react-burger-menu';
 import { mediaQueries } from '../../styles/mediaQueries';
 import EmailSub from '../emailSub';
 import {
@@ -23,6 +22,7 @@ const theme = {
 export default () => {
   const [isDark, setIsDark] = useState(typeof window === 'undefined' ? theme.dark : window.__theme === theme.dark);
   const [icon, setIcon] = useState(<SunIcon />);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -34,17 +34,21 @@ export default () => {
 
   return (
     <HeaderBorder>
-      <BurgerWrapper>
-        <Menu right styles={burgerStyles}>
-          <ListLink to="/" title={titles.articles} />
-          <ListLink to="/about/" title={titles.about} />
-          <Row icon={titles.theme} onClick={() => { setIsDark(!isDark); }}>
-            { icon }
-            <LinkTitle>{titles.theme}</LinkTitle>
-          </Row>
-          <EmailSub isBurger />
-        </Menu>
-      </BurgerWrapper>
+      <Burger open={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <div />
+        <div />
+        <div />
+      </Burger>
+      <Menu open={isMenuOpen}>
+        <Padding />
+        <ListLink to="/" title={titles.articles} />
+        <ListLink to="/about/" title={titles.about} />
+        <Row icon={titles.theme} onClick={() => { setIsDark(!isDark); }}>
+          { icon }
+          <LinkTitle>{titles.theme}</LinkTitle>
+        </Row>
+        <EmailSub isBurger />
+      </Menu>
       <HeaderContainer>
         <Link to="/">
           <Title>JX</Title>
@@ -75,52 +79,21 @@ const ListLink = (props) => {
   );
 };
 
-const burgerStyles = {
-  bmBurgerButton: {
-    position: 'fixed',
-    width: '36px',
-    height: '30px',
-    right: '36px',
-    top: '16px'
-  },
-  bmBurgerBars: {
-    background: '#636363'
-  },
-  bmBurgerBarsHover: {
-    background: 'lightgray'
-  },
-  bmCrossButton: {
-    height: '96px',
-    width: '96px'
-  },
-  bmCross: {
-    background: '#bdc3c7',
-  },
-  bmMenu: {
-    background: '#373a47',
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em',
-  },
-  bmItem: {
-    display: 'flex'
-  },
-  bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)'
-  }
-};
-
 const AboutIcon = styled(About)`
   color: whitesmoke;
+  margin: .2rem;
   ${mediaQueries('md')` display: none; `};
 `;
 
 const ArticleIcon = styled(Article)`
   color: whitesmoke;
+  margin: .2rem;
   ${mediaQueries('md')` display: none; `};
 `;
 
 const MoonIcon = styled(Moon)`
   color: whitesmoke;
+  margin: .2rem;
   ${mediaQueries('md')` 
     margin: 0 0 0 1rem; 
     &:hover {
@@ -131,6 +104,7 @@ const MoonIcon = styled(Moon)`
 
 const SunIcon = styled(Sun)`
   color: whitesmoke;
+  margin: .2rem;
   ${mediaQueries('md')` 
     margin: 0 0 0 1rem; 
     color: black; 
@@ -183,28 +157,102 @@ const LinksContainer = styled.div`
 `;
 
 const LinkTitle = styled.span`
-  font-size: 10px;
+  font-size: 24px;
   font-family: "Ubuntu", sans-serif;
   transition: all 0.25s;
   margin-left: 0.25rem;
   color: whitesmoke;
 
-  ${mediaQueries('md')` color: var(--primary-text-color); `};
+  ${mediaQueries('md')` 
+    font-size: 10px;
+    color: var(--primary-text-color); 
+  `};
 
   &:hover {
     color: var(--highlight-color);
   }
 `;
 
-const BurgerWrapper = styled.div`
-  ${mediaQueries('md')` display: none; `};
-  z-index: 999999;
-`;
-
 const Row = styled.div`
   display: flex;
   flex-direction: row;
-  align-content: center;
+  align-items: center;
   margin: 0.5rem;
   cursor: pointer;
+`;
+
+const Menu = styled.nav`
+  display: flex;
+  flex-direction: column;
+  background: #373a47;
+  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
+  height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+
+  ${mediaQueries('sm')` 
+    width: auto;
+    min-width: 50%;
+  `};
+
+  ${mediaQueries('md')`
+    display: none;
+  `}
+`;
+
+const Burger = styled.button`
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+
+  &:focus {
+    outline: none;
+  }
+
+  div {
+    width: 2rem;
+    height: 0.33rem;
+    background: ${({ open }) => (open ? 'whitesmoke;' : 'var(--primary-text-color);')};
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+
+    :first-child {
+      transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
+    }
+
+    :nth-child(2) {
+      opacity: ${({ open }) => (open ? '0' : '1')};
+      transform: ${({ open }) => (open ? 'translateX(20px)' : 'translateX(0)')};
+    }
+
+    :nth-child(3) {
+      transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
+    }
+  }
+
+
+  ${mediaQueries('md')`
+    display: none;
+  `}
+`;
+
+const Padding = styled.div`
+  height: 3rem;
 `;

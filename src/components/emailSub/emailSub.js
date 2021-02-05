@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import Spinner from '../spinner';
 
 import { Email } from '../icons/icons';
+import { mediaQueries } from '../../styles/mediaQueries';
 
 const customStyles = {
   overlay: {
@@ -117,6 +118,7 @@ export default ({ isBurger }) => {
 
 const EmailIcon = styled(Email)`
   color: whitesmoke;
+  margin: .2rem;
 `;
 
 const Input = styled.input`
@@ -196,13 +198,18 @@ const SubButton = styled.button`
 const Row = styled.div`
   display: flex;
   flex-direction: row;
-  align-content: center;
+  align-items: center;
   margin: 0.5rem;
   cursor: pointer;
 `;
 
 const LinkTitle = styled.span`
-  font-size: 10px;
+  font-size: 24px;
+
+  ${mediaQueries('md')` 
+      font-size: 10px;
+  `};
+
   font-family: "Ubuntu", sans-serif;
   transition: all 0.25s;
   margin-left: 0.25rem;
