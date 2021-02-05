@@ -207,7 +207,7 @@ const LinkTitle = styled.span`
   font-size: 24px;
 
   ${mediaQueries('md')` 
-      font-size: 10px;
+      font-size: 12px;
   `};
 
   font-family: "Ubuntu", sans-serif;

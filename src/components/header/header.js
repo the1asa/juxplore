@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles/mediaQueries';
@@ -7,6 +7,7 @@ import EmailSub from '../emailSub';
 import {
   About, Article, Sun, Moon
 } from '../icons/icons';
+import { useOnClickOutside } from './hooks';
 
 const titles = {
   articles: 'ARTICLES',
@@ -23,6 +24,8 @@ export default () => {
   const [isDark, setIsDark] = useState(typeof window === 'undefined' ? theme.dark : window.__theme === theme.dark);
   const [icon, setIcon] = useState(<SunIcon />);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const node = useRef();
+  useOnClickOutside(node, () => setIsMenuOpen(false));
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -34,21 +37,23 @@ export default () => {
 
   return (
     <HeaderBorder>
-      <Burger open={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <div />
-        <div />
-        <div />
-      </Burger>
-      <Menu open={isMenuOpen}>
-        <Padding />
-        <ListLink to="/" title={titles.articles} />
-        <ListLink to="/about/" title={titles.about} />
-        <Row icon={titles.theme} onClick={() => { setIsDark(!isDark); }}>
-          { icon }
-          <LinkTitle>{titles.theme}</LinkTitle>
-        </Row>
-        <EmailSub isBurger />
-      </Menu>
+      <div ref={node}>
+        <Burger open={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div />
+          <div />
+          <div />
+        </Burger>
+        <Menu open={isMenuOpen}>
+          <Padding />
+          <ListLink to="/" title={titles.articles} onClick={() => setIsMenuOpen(false)} />
+          <ListLink to="/about/" title={titles.about} onClick={() => setIsMenuOpen(false)} />
+          <Row icon={titles.theme} onClick={() => { setIsDark(!isDark); }}>
+            { icon }
+            <LinkTitle>{titles.theme}</LinkTitle>
+          </Row>
+          <EmailSub isBurger />
+        </Menu>
+      </div>
       <HeaderContainer>
         <Link to="/">
           <Title>JX</Title>
@@ -66,11 +71,10 @@ export default () => {
   );
 };
 
-const ListLink = (props) => {
-  const { to, title } = props;
+const ListLink = ({ to, title, onClick = () => {} }) => {
   const DisplayIcon = title === titles.about ? AboutIcon : ArticleIcon;
   return (
-    <Link to={to}>
+    <Link to={to} onClick={onClick}>
       <Row icon={title}>
         <DisplayIcon />
         <LinkTitle>{title}</LinkTitle>
@@ -164,7 +168,7 @@ const LinkTitle = styled.span`
   color: whitesmoke;
 
   ${mediaQueries('md')` 
-    font-size: 10px;
+    font-size: 12px;
     color: var(--primary-text-color); 
   `};
 
