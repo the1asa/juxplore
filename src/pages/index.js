@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import PageContainer from '../components/pageContainer';
 import PostCard from '../components/postCard/postCard';
@@ -16,20 +16,27 @@ export default ({ data }) => {
   });
 
   // most recent date first
-  posts.sort((a, b) => new Date(b.date).toISOString().localeCompare(new Date(a.date).toISOString()));
+  posts.sort((a, b) => new Date(b.date)
+    .toISOString().localeCompare(new Date(a.date).toISOString()));
 
   return (
     <PageContainer>
-      <Fragment>
-        { posts.map(({
-          title, subtitle, link, date, image
-        }) => (
-          <PostCard key={title} title={title} subtitle={subtitle} link={link} date={date} image={image} />
-        ))}
-      </Fragment>
+      { posts.map(({
+        title, subtitle, link, date, image
+      }) => (
+        <PostCard
+          key={title}
+          title={title}
+          subtitle={subtitle}
+          link={link}
+          date={date}
+          image={image}
+        />
+      ))}
     </PageContainer>
   );
 };
+
 
 export const query = graphql`
   query {

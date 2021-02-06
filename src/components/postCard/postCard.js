@@ -58,6 +58,7 @@ const Subtitle = styled.p`
   margin: 0 .5rem 0 0;
   color: var(--primary-text-color);
   display: none;
+  font-size: 16px;
 
   ${mediaQueries('md')` display: block; `};
   ${mediaQueries('lg')` display: block; `};

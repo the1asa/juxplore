@@ -41,9 +41,9 @@
     "gatsby-transformer-sharp": "^2.2.16",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-modal": "^3.12.1",
     "react-typography": "^0.16.19",
     "styled-components": "^5.2.1",
+    "styled-react-modal": "^2.0.1",
     "typeface-exo-2": "0.0.72",
     "typography": "^0.16.19",
     "typography-theme-ocean-beach": "^0.16.19"

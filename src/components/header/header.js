@@ -47,11 +47,17 @@ export default () => {
           <Padding />
           <ListLink to="/" title={titles.articles} onClick={() => setIsMenuOpen(false)} />
           <ListLink to="/about/" title={titles.about} onClick={() => setIsMenuOpen(false)} />
-          <Row icon={titles.theme} onClick={() => { setIsDark(!isDark); }}>
+          <Row
+            icon={titles.theme}
+            onClick={() => {
+              setIsDark(!isDark);
+              setIsMenuOpen(false);
+            }}
+          >
             { icon }
             <LinkTitle>{titles.theme}</LinkTitle>
           </Row>
-          <EmailSub isBurger />
+          <EmailSub isBurger onClick={() => setIsMenuOpen(false)} />
         </Menu>
       </div>
       <HeaderContainer>
@@ -124,7 +130,7 @@ const HeaderBorder = styled.div`
   width: 100%;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   background-color: var(--primary-background-color);
 `;
 
@@ -135,7 +141,7 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
   
   ${mediaQueries('xsm')` max-width: 85%; `};
   ${mediaQueries('md')` max-width: 75%; `};
@@ -168,7 +174,7 @@ const LinkTitle = styled.span`
   color: whitesmoke;
 
   ${mediaQueries('md')` 
-    font-size: 12px;
+    font-size: 16px;
     color: var(--primary-text-color); 
   `};
 

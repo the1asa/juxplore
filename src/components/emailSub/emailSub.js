@@ -1,46 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import styled from 'styled-components';
-import Modal from 'react-modal';
+import Modal from 'styled-react-modal';
 import Spinner from '../spinner';
-
 import { Email } from '../icons/icons';
 import { mediaQueries } from '../../styles/mediaQueries';
-
-const customStyles = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-    zIndex: 999999
-  },
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    background: '#fff',
-    border: '1px solid #fff',
-  }
-};
 
 function isEmailValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-export default ({ isBurger }) => {
+export default ({ isBurger, onClick = () => {} }) => {
   const [displayModal, setDisplayModal] = useState(false);
+  const [opacity, setOpacity] = useState(0);
   const [email, setEmail] = useState('');
   const [error, setError] = useState(null);
   const [subscribed, setSubscribed] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
 
-  const openModal = () => { setDisplayModal(true); };
-  const closeModal = () => {
-    setEmail('');
-    setError(null);
-    setSubscribed(false);
-    setDisplayModal(false);
-  };
   async function postEmail() {
     setIsSaving(true);
 
@@ -63,6 +39,23 @@ export default ({ isBurger }) => {
     setIsSaving(false);
   }
 
+  function closeModal() {
+    document.querySelector('html').style.overflow = 'visible';
+    setOpacity(0);
+    setDisplayModal(false);
+    setEmail('');
+    setError('');
+    setSubscribed(false);
+    setIsSaving(false);
+  }
+
+  function openModal() {
+    document.querySelector('html').style.overflow = 'hidden';
+    onClick();
+    setOpacity(1);
+    setDisplayModal(true);
+  }
+
   return (
     <div>
       { isBurger
@@ -74,51 +67,79 @@ export default ({ isBurger }) => {
         )
         : <SubButton onClick={openModal}>SUBSCRIBE</SubButton>
       }
-      <Modal
+      <StyledModal
         isOpen={displayModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        ariaHideApp={false}
+        afterOpen={() => {}}
+        beforeClose={() => {}}
+        onBackgroundClick={closeModal}
+        onEscapeKeydown={closeModal}
+        opacity={opacity}
+        backgroundProps={{ opacity }}
       >
-        { error
+        <Column>
+          <EmailModalIcon size="large" />
+          { error
             && (
-            <Column>
-              <Text>Something went wrong, please try again.</Text>
-              { isSaving
-                ? <SpinnerWrapper><Spinner /></SpinnerWrapper>
-                : <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>RESUBMIT</PostButton>
-                }
-            </Column>
+              <Fragment>
+                <Text>Something went wrong, please try again.</Text>
+                { isSaving
+                  ? <SpinnerWrapper><Spinner /></SpinnerWrapper>
+                  : <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>RESUBMIT</PostButton>
+                  }
+              </Fragment>
             )
           }
-        { subscribed
+          { subscribed
             && (
-            <Column>
-              <Text>Got it! Please whitelist asa@juxplore.com to ensure that my emails won't go to your spam folder. You can unsubscribe at any time using the link in my emails.</Text>
-              <PostButton onClick={closeModal}>CLOSE</PostButton>
-            </Column>
+              <Fragment>
+                <Text>Got it! Please whitelist asa@juxplore.com so my emails won't go to your spam folder. You can unsubscribe at any time using the link in the emails.</Text>
+                <PostButton onClick={closeModal}>CLOSE</PostButton>
+              </Fragment>
             )
           }
-        { !error && !subscribed
-              && (
-              <Column>
-                <Text>If you would like to receive updates when new articles are published, please enter your email.</Text>
+          { !error && !subscribed
+            && (
+              <Fragment>
+                <Text>Enter your email to receive updates when new articles are published.</Text>
                 <Input type="email" placeholder="mail@example.com" onChange={e => setEmail(e.target.value)} />
                 { isSaving
                   ? <SpinnerWrapper><Spinner /></SpinnerWrapper>
                   : <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>SUBSCRIBE NOW</PostButton>
                 }
-              </Column>
-              )
+              </Fragment>
+            )
           }
-      </Modal>
+        </Column>
+      </StyledModal>
     </div>
   );
 };
 
+const StyledModal = Modal.styled`
+  width: 30rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-background-color);
+  opacity: ${props => props.opacity};
+  transition : all 0.3s ease-in-out;
+`;
+
 const EmailIcon = styled(Email)`
   color: whitesmoke;
   margin: .2rem;
+`;
+
+const EmailModalIcon = styled(Email)`
+  color: whitesmoke;
+  background-color: var(--highlight-color);
+  border-radius: 100%;
+  border 5px solid var(--highlight-color);
+  margin-bottom: 1.5rem;
+  margin-top: -3rem;
+
+  ${props => (props.size === 'large' ? 'height: 48px; width: 48px;' : '')}
 `;
 
 const Input = styled.input`
@@ -175,9 +196,9 @@ const Column = styled.div`
 const Text = styled.span`
   font-family: "Ubuntu", sans-serif;
   font-size: 18px;
-  margin: 0.5rem;
+  margin: .5rem 2rem .5rem 2rem;
   text-align: center;
-  color: black;
+  color: var(--primary-text-color)
 `;
 
 const SubButton = styled.button`
@@ -187,7 +208,6 @@ const SubButton = styled.button`
   color: var(--highlight-color);
   font-family: "Ubuntu", sans-serif;
   cursor: pointer;
-  font-size: 10px;
   &:hover {
     background-color: var(--highlight-color);
     color: var(--primary-background-color);
@@ -207,7 +227,7 @@ const LinkTitle = styled.span`
   font-size: 24px;
 
   ${mediaQueries('md')` 
-      font-size: 12px;
+      font-size: 16px;
   `};
 
   font-family: "Ubuntu", sans-serif;
