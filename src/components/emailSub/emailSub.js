@@ -136,7 +136,7 @@ const EmailModalIcon = styled(Email)`
   background-color: var(--highlight-color);
   border-radius: 100%;
   border 5px solid var(--highlight-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   margin-top: -3rem;
 
   ${props => (props.size === 'large' ? 'height: 48px; width: 48px;' : '')}
@@ -188,7 +188,7 @@ const PostButton = styled.button`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 450px;
+  width: 450px;
   justify-content: center;
   align-items: center;
 `;
