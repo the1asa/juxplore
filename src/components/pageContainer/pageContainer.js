@@ -11,7 +11,7 @@ export default (props) => {
   return (
     <ModalProvider backgroundComponent={FadingBackground}>
       <Header />
-      <Container id="page-container" pageName={pageName}>{children}</Container>
+      <Container pageName={pageName}>{children}</Container>
     </ModalProvider>
   );
 };
@@ -28,15 +28,14 @@ const Container = styled.div`
   max-width: 85%;
 
   ${mediaQueries('xsm')` max-width: 85%; `};
-  ${mediaQueries('med')` max-width: 75%; `};
+  ${mediaQueries('sm')` max-width: 75%; `};
+  ${mediaQueries('med')` max-width: 65%; `};
   ${mediaQueries('lg')` max-width: 45%; `};
-  ${mediaQueries('xlg')` max-width: 45%; `};
-
+  ${mediaQueries('xl')` max-width: 35%; `};
 
   ${props => props.pageName === 'about'
   && `
     max-width: 85%;
-    ${mediaQueries('lg')` max-width: 55%; `};
-    ${mediaQueries('xlg')` max-width: 55%; `};
+    ${mediaQueries('lg')` max-width: 45%; `};
   `};
 `;

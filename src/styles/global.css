@@ -1,3 +1,5 @@
+@import './markdown.css';
+
 html {
   --primary-background-color: whitesmoke;
   --primary-text-color: black;

@@ -21,8 +21,8 @@ const theme = {
 };
 
 export default () => {
-  const [isDark, setIsDark] = useState(typeof window === 'undefined' ? theme.dark : window.__theme === theme.dark);
-  const [icon, setIcon] = useState(<SunIcon />);
+  const [isLight, setIsLight] = useState(typeof window === 'undefined' ? false : window.__theme !== theme.dark);
+  const [icon, setIcon] = useState(<MoonIcon />);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setIsMenuOpen(false));
@@ -31,9 +31,9 @@ export default () => {
     if (typeof window === 'undefined') {
       return;
     }
-    window.__setPreferredTheme(isDark ? theme.dark : theme.light);
-    if (isDark) { setIcon(<MoonIcon />); } else { setIcon(<SunIcon />); }
-  }, [isDark]);
+    window.__setPreferredTheme(isLight ? theme.light : theme.dark);
+    if (isLight) { setIcon(<SunIcon />); } else { setIcon(<MoonIcon />); }
+  }, [isLight]);
 
   return (
     <HeaderBorder>
@@ -50,7 +50,7 @@ export default () => {
           <Row
             icon={titles.theme}
             onClick={() => {
-              setIsDark(!isDark);
+              setIsLight(!isLight);
               setIsMenuOpen(false);
             }}
           >
@@ -68,7 +68,7 @@ export default () => {
           <EmailSub />
           <ListLink to="/" title={titles.articles} />
           <ListLink to="/about/" title={titles.about} />
-          <Row onClick={() => { setIsDark(!isDark); }}>
+          <Row onClick={() => { setIsLight(!isLight); }}>
             { icon }
           </Row>
         </LinksContainer>
@@ -144,7 +144,6 @@ const HeaderContainer = styled.div`
   z-index: 100;
   
   ${mediaQueries('xsm')` max-width: 85%; `};
-  ${mediaQueries('md')` max-width: 75%; `};
   ${mediaQueries('lg')` max-width: 55%; `};
 `;
 
@@ -155,6 +154,7 @@ const Title = styled.h1`
   color: var(--logo-text-color);
   margin: 0.5rem 0rem;
   user-select: none;
+  font-size: 36px;
 `;
 
 const LinksContainer = styled.div`
@@ -167,14 +167,14 @@ const LinksContainer = styled.div`
 `;
 
 const LinkTitle = styled.span`
-  font-size: 24px;
+  font-size: 4vmin;
   font-family: "Ubuntu", sans-serif;
   transition: all 0.25s;
   margin-left: 0.25rem;
   color: whitesmoke;
 
   ${mediaQueries('md')` 
-    font-size: 16px;
+    font-size: 1.6vmin;
     color: var(--primary-text-color); 
   `};
 

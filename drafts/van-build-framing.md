@@ -8,7 +8,7 @@ date: "2021-01-09"
 
 I went into this project with minimal wood working or DIY experience. Building the floor, walls, and ceiling proved to be a more difficult and involving task then it first appeared. We completed the following by working MANY hours over the course of a month and half. And by the end of it, I had made enough mistakes that I believe I could complete the same task now in half the time.
 
-<h4 id="flooring" style="font-size:28px; font-family: Ubuntu;">Flooring</h4>
+## Flooring
 
 We decided early on that we would add insulation, if only because it would be a giant hassle to install later if we wanted it. For the floor we used a mix of 1/4" Polystyrene and 1/2" XPS foam board and for the walls and ceiling we used 1" Polyiso foam board. We chose this insulation for the best blend of R-value (this is a measurement of how well a material insulates) and price. In total we paid around $150-$200 for insulation. In retrospect, using sheeps wool as insulation would have been less toxic, easier to apply, and not terribly more expensive...but we didn't have the patience to wait for a long delivery time.
 
@@ -34,6 +34,6 @@ The plywood was cut using the XPS as templates and then siliconed to the XPS. Un
 
 ![Vinyl layer](../../images/floor_layer_4.jpg)
 
-<p style="font-size:32px; font-family: Ubuntu;">Walls</p>
+## Walls
 
 

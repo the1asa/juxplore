@@ -5,33 +5,31 @@ import PageContainer from '../components/pageContainer';
 
 export default () => (
   <PageContainer pageName="about">
-    {/* <Title><b>Juxplore</b></Title> */}
-    <p>
+    <Text>
       <i>
         &quot;People say: idle curiosity. The one thing that curiosity cannot be is idle.&quot;
       </i>
       {'\n'}
       - Leo Roston
-    </p>
-    <p>
+    </Text>
+    <Text>
       Welcome to my tiny corner of the internet. I created this site to share my thoughts and projects and to explore new interests.
-    </p>
-    <p>
+    </Text>
+    <Text>
       I currently work as a software engineer, you can read more about how that happened
       {' '}
       <b><Link to="../articles/a-tale-of-two-brains/">here</Link></b>
       .
-    </p>
-    <p>
+    </Text>
+    <Text>
       Contacts welcome
       {' '}
       <b><a href="mailto: asa@juxplore.com">here</a></b>
       .
-    </p>
+    </Text>
   </PageContainer>
 );
 
-const Title = styled.h1`
-  font-family: "Ubuntu", sans-serif;
-  padding-bottom: 0.5rem;
+const Text = styled.p`
+  font-size: 2vmin;
 `;

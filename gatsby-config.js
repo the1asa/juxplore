@@ -36,7 +36,6 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-transformer-remark',
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-transformer-remark',
@@ -48,6 +47,18 @@ module.exports = {
               maxWidth: 1200,
             },
           },
+          {
+            resolve: 'gatsby-remark-classes',
+            options: {
+              classMap: {
+                paragraph: 'text-base',
+                listItem: 'text-base',
+                'list[ordered=false]': 'text-base',
+                'list[ordered=true]': 'text-base',
+                list: 'text-base',
+              }
+            }
+          }
         ],
       },
     },

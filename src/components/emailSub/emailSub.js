@@ -77,7 +77,7 @@ export default ({ isBurger, onClick = () => {} }) => {
         backgroundProps={{ opacity }}
       >
         <Column>
-          <EmailModalIcon size="large" />
+          <EmailModalIcon />
           { error
             && (
               <Fragment>
@@ -116,14 +116,12 @@ export default ({ isBurger, onClick = () => {} }) => {
 };
 
 const StyledModal = Modal.styled`
-  width: 30rem;
-  height: 15rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--primary-background-color);
   opacity: ${props => props.opacity};
-  transition : all 0.3s ease-in-out;
+  transition : all 0.3s ease-in-out;  
 `;
 
 const EmailIcon = styled(Email)`
@@ -136,10 +134,10 @@ const EmailModalIcon = styled(Email)`
   background-color: var(--highlight-color);
   border-radius: 100%;
   border 5px solid var(--highlight-color);
-  margin-bottom: 1rem;
-  margin-top: -3rem;
-
-  ${props => (props.size === 'large' ? 'height: 48px; width: 48px;' : '')}
+  position: relative;
+  top: -24px;
+  height: 48px; 
+  width: 48px;
 `;
 
 const Input = styled.input`
@@ -147,7 +145,7 @@ const Input = styled.input`
   margin: 0.25rem;
   border-bottom: 1px solid black;
   width: 80%;
-  font-size: 20px;
+  font-size: 2vmin;
   font-family: "Ubuntu", sans-serif;
 `;
 
@@ -161,17 +159,19 @@ const SpinnerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 50px;
+  margin-bottom: 2rem;
 `;
 
 const PostButton = styled.button`
   margin: 0.25rem;
   font-family: "Ubuntu", sans-serif;
-  font-size: 20px;
+  font-size: 2vmin;
   background-color: var(--highlight-color);
   color: white;
   border-color: var(--highlight-color);
   width: 80%;
   padding: 10px;
+  margin-bottom: 2rem;
 
   ${props => (props.disabled
     ? `
@@ -195,8 +195,8 @@ const Column = styled.div`
 
 const Text = styled.span`
   font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
-  margin: .5rem 2rem .5rem 2rem;
+  font-size: 2vmin;
+  margin: 0 2rem 1rem 2rem;
   text-align: center;
   color: var(--primary-text-color)
 `;
@@ -224,10 +224,10 @@ const Row = styled.div`
 `;
 
 const LinkTitle = styled.span`
-  font-size: 24px;
+  font-size: 4vmin;
 
   ${mediaQueries('md')` 
-      font-size: 16px;
+      font-size: 1.6vmin;
   `};
 
   font-family: "Ubuntu", sans-serif;
