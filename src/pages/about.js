@@ -31,5 +31,5 @@ export default () => (
 );
 
 const Text = styled.p`
-  font-size: 2vmin;
+  font-size: 18px;
 `;

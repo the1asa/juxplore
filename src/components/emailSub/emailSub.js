@@ -145,7 +145,7 @@ const Input = styled.input`
   margin: 0.25rem;
   border-bottom: 1px solid black;
   width: 80%;
-  font-size: 2vmin;
+  font-size: 20px;
   font-family: "Ubuntu", sans-serif;
 `;
 
@@ -165,7 +165,7 @@ const SpinnerWrapper = styled.div`
 const PostButton = styled.button`
   margin: 0.25rem;
   font-family: "Ubuntu", sans-serif;
-  font-size: 2vmin;
+  font-size: 20px;
   background-color: var(--highlight-color);
   color: white;
   border-color: var(--highlight-color);
@@ -195,7 +195,7 @@ const Column = styled.div`
 
 const Text = styled.span`
   font-family: "Ubuntu", sans-serif;
-  font-size: 2vmin;
+  font-size: 18px;
   margin: 0 2rem 1rem 2rem;
   text-align: center;
   color: var(--primary-text-color)
@@ -224,10 +224,10 @@ const Row = styled.div`
 `;
 
 const LinkTitle = styled.span`
-  font-size: 4vmin;
+  font-size: 24px;
 
   ${mediaQueries('md')` 
-      font-size: 1.6vmin;
+      font-size: 16px;
   `};
 
   font-family: "Ubuntu", sans-serif;

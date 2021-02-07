@@ -43,7 +43,7 @@ const TitleContainer = styled.div`
   align-content: center;
 `;
 
-const Title = styled.h4`
+const Title = styled.h3`
   margin: 0rem 1rem .25rem 0rem;
   transition: color 0.25s;
   font-weight: bold;
@@ -58,7 +58,7 @@ const Subtitle = styled.p`
   margin: 0 .5rem 0 0;
   color: var(--primary-text-color);
   display: none;
-  font-size: 1.6vmin;
+  font-size: 16px;
 
   ${mediaQueries('md')` display: block; `};
   ${mediaQueries('lg')` display: block; `};

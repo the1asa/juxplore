@@ -167,14 +167,14 @@ const LinksContainer = styled.div`
 `;
 
 const LinkTitle = styled.span`
-  font-size: 4vmin;
+  font-size: 24px;
   font-family: "Ubuntu", sans-serif;
   transition: all 0.25s;
   margin-left: 0.25rem;
   color: whitesmoke;
 
   ${mediaQueries('md')` 
-    font-size: 1.6vmin;
+    font-size: 16px;
     color: var(--primary-text-color); 
   `};
 

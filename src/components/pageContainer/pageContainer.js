@@ -30,8 +30,8 @@ const Container = styled.div`
   ${mediaQueries('xsm')` max-width: 85%; `};
   ${mediaQueries('sm')` max-width: 75%; `};
   ${mediaQueries('med')` max-width: 65%; `};
-  ${mediaQueries('lg')` max-width: 45%; `};
-  ${mediaQueries('xl')` max-width: 35%; `};
+  ${mediaQueries('lg')` max-width: 50%; `};
+  ${mediaQueries('xl')` max-width: 40%; `};
 
   ${props => props.pageName === 'about'
   && `
