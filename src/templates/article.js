@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 import PageContainer from '../components/pageContainer';
 
 export default ({ data }) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid;
   const { featuredImageTitle } = post.frontmatter;
   const displayFeatureImg = !featuredImgFluid.src.includes('dummy.png');
@@ -20,7 +21,7 @@ export default ({ data }) => {
           { featuredImageTitle && <FeatureTitle>{featuredImageTitle}</FeatureTitle> }
         </Feature>
 
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MDXRenderer>{post.body}</MDXRenderer>
       </Fragment>
     </PageContainer>
   );
@@ -28,15 +29,15 @@ export default ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         date
         featuredImageTitle
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid
             }
           }

@@ -48,6 +48,8 @@ const Title = styled.h3`
   transition: color 0.25s;
   font-weight: bold;
   color: var(--primary-text-color);
+  font-size: 18px;
+  ${mediaQueries('md')` font-size: 20px; `};
 
   ${Container}:hover & {
     color: var(--highlight-color);

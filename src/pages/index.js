@@ -5,7 +5,7 @@ import PostCard from '../components/postCard/postCard';
 
 export default ({ data }) => {
   const posts = [];
-  data.allMarkdownRemark.edges.forEach(({ node }) => {
+  data.allMdx.edges.forEach(({ node }) => {
     posts.push({
       title: node.frontmatter.title,
       subtitle: node.frontmatter.subtitle,
@@ -40,7 +40,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMdx {
       totalCount
       edges {
         node {
@@ -51,7 +51,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 1200) {
                   ...GatsbyImageSharpFluid
                 }
               }

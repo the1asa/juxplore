@@ -35,29 +35,39 @@ export default () => {
     if (isLight) { setIcon(<SunIcon />); } else { setIcon(<MoonIcon />); }
   }, [isLight]);
 
+  function openMenu() {
+    setIsMenuOpen(true);
+    document.querySelector('html').style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    setIsMenuOpen(false);
+    document.querySelector('html').style.overflow = 'visible';
+  }
+
   return (
     <HeaderBorder>
       <div ref={node}>
-        <Burger open={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <Burger open={isMenuOpen} onClick={() => (isMenuOpen ? closeMenu() : openMenu())}>
           <div />
           <div />
           <div />
         </Burger>
         <Menu open={isMenuOpen}>
           <Padding />
-          <ListLink to="/" title={titles.articles} onClick={() => setIsMenuOpen(false)} />
-          <ListLink to="/about/" title={titles.about} onClick={() => setIsMenuOpen(false)} />
+          <ListLink to="/" title={titles.articles} onClick={() => closeMenu()} />
+          <ListLink to="/about/" title={titles.about} onClick={() => closeMenu()} />
           <Row
             icon={titles.theme}
             onClick={() => {
               setIsLight(!isLight);
-              setIsMenuOpen(false);
+              closeMenu();
             }}
           >
             { icon }
             <LinkTitle>{titles.theme}</LinkTitle>
           </Row>
-          <EmailSub isBurger onClick={() => setIsMenuOpen(false)} />
+          <EmailSub isBurger onClick={() => closeMenu()} />
         </Menu>
       </div>
       <HeaderContainer>

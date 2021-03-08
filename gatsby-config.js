@@ -37,14 +37,17 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-catch-links',
+    'gatsby-remark-images',
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        plugins: [
+        extensions: ['.mdx', '.md'],
+        plugins: ['gatsby-remark-images'],
+        gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 1200,
+              maxWidth: 800
             },
           },
           {
@@ -58,7 +61,7 @@ module.exports = {
                 list: 'text-base',
               }
             }
-          }
+          },
         ],
       },
     },
@@ -67,19 +70,6 @@ module.exports = {
       options: {
         pathToConfigModule: 'src/utils/typography',
       }
-    },
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 1200,
-            },
-          },
-        ],
-      },
     },
     {
       resolve: 'gatsby-source-filesystem',

@@ -55,3 +55,5 @@ It was great that we were able to line up the shower with the sink and the stove
 After a few weeks travelling in it, I'm not sure what we would change. Really my only gripe is that it is difficult to cook with two people...but I'm not sure how we could do better there. Some things are just difficult in a tiny space, no matter what you do. One other problem is that you cannot access the bench storage when the bed is down. We plan to solve this by making access panels in the sides of the bench in addition to the swivel top. Altogether we are pleased with the way it turned out and are able to eat, sleep, and work comfortably. 
 
 Future posts will visit more specific parts of the build, like how to build the bench/murphy bed.
+
+In the **[next post](../van-build-framing/)** we finally begin building - starting with the floor, walls, and ceiling.
