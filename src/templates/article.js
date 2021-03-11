@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 import PageContainer from '../components/pageContainer';
+import EmailSub from '../components/emailSub';
 
 export default ({ data }) => {
   const post = data.mdx;
@@ -13,8 +14,8 @@ export default ({ data }) => {
   const displayFeatureImg = !featuredImgFluid.src.includes('dummy.png');
   const { title } = post.frontmatter;
   return (
-    <PageContainer>
-      <Fragment>
+    <Fragment>
+      <PageContainer>
         <Title>{title}</Title>
         <Feature>
           { displayFeatureImg && <Img fluid={featuredImgFluid} /> }
@@ -22,8 +23,13 @@ export default ({ data }) => {
         </Feature>
 
         <MDXRenderer>{post.body}</MDXRenderer>
-      </Fragment>
-    </PageContainer>
+      </PageContainer>
+      <EmailContainer>
+        <EmailSub isArticle />
+      </EmailContainer>
+
+    </Fragment>
+
   );
 };
 
@@ -59,4 +65,13 @@ const FeatureTitle = styled.h5`
   margin-top: 1rem;
   font-style: italic;
   color: var(--primary-text-color);
+`;
+
+const EmailContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  border-top: 1px solid var(--border-color);
+  padding: 0px;
+  margin-top:100px;
 `;

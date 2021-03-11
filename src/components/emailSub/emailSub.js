@@ -9,7 +9,7 @@ function isEmailValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-export default ({ isBurger, onClick = () => {} }) => {
+export default ({ isBurger, isArticle, onClick = () => {} }) => {
   const [displayModal, setDisplayModal] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [email, setEmail] = useState('');
@@ -56,29 +56,10 @@ export default ({ isBurger, onClick = () => {} }) => {
     setDisplayModal(true);
   }
 
-  return (
-    <div>
-      { isBurger
-        ? (
-          <Row onClick={openModal}>
-            <EmailIcon />
-            <LinkTitle>SUBSCRIBE</LinkTitle>
-          </Row>
-        )
-        : <SubButton onClick={openModal}>SUBSCRIBE</SubButton>
-      }
-      <StyledModal
-        isOpen={displayModal}
-        afterOpen={() => {}}
-        beforeClose={() => {}}
-        onBackgroundClick={closeModal}
-        onEscapeKeydown={closeModal}
-        opacity={opacity}
-        backgroundProps={{ opacity }}
-      >
-        <Column>
-          <EmailModalIcon />
-          { error
+  const SubscribeAction = (
+    <Column>
+      <EmailModalIcon />
+      { error
             && (
               <Fragment>
                 <Text>Something went wrong, please try again.</Text>
@@ -89,7 +70,7 @@ export default ({ isBurger, onClick = () => {} }) => {
               </Fragment>
             )
           }
-          { subscribed
+      { subscribed
             && (
               <Fragment>
                 <Text>Got it! Please whitelist asa@juxplore.com so my emails won't go to your spam folder. You can unsubscribe at any time using the link in the emails.</Text>
@@ -97,20 +78,52 @@ export default ({ isBurger, onClick = () => {} }) => {
               </Fragment>
             )
           }
-          { !error && !subscribed
+      { !error && !subscribed
             && (
               <Fragment>
                 <Text>Enter your email to receive updates when new articles are published.</Text>
                 <Input type="email" placeholder="mail@example.com" onChange={e => setEmail(e.target.value)} />
                 { isSaving
                   ? <SpinnerWrapper><Spinner /></SpinnerWrapper>
-                  : <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>SUBSCRIBE NOW</PostButton>
+                  : <PostButton onClick={postEmail} disabled={!isEmailValid(email)}>SUBSCRIBE</PostButton>
                 }
               </Fragment>
             )
           }
-        </Column>
-      </StyledModal>
+    </Column>
+  );
+
+  return (
+    <div>
+      {(() => {
+        if (isArticle) {
+          return SubscribeAction;
+        }
+        return (
+          <div>
+            { isBurger
+              ? (
+                <Row onClick={openModal}>
+                  <EmailIcon />
+                  <LinkTitle>SUBSCRIBE</LinkTitle>
+                </Row>
+              )
+              : <SubButton onClick={openModal}>SUBSCRIBE</SubButton>
+            }
+            <StyledModal
+              isOpen={displayModal}
+              afterOpen={() => {}}
+              beforeClose={() => {}}
+              onBackgroundClick={closeModal}
+              onEscapeKeydown={closeModal}
+              opacity={opacity}
+              backgroundProps={{ opacity }}
+            >
+              {SubscribeAction}
+            </StyledModal>
+          </div>
+        );
+      })()}
     </div>
   );
 };
@@ -196,7 +209,7 @@ const Column = styled.div`
 const Text = styled.span`
   font-family: "Ubuntu", sans-serif;
   font-size: 18px;
-  margin: 0 2rem 1rem 2rem;
+  margin: 0 1rem 1rem 1rem;
   text-align: center;
   color: var(--primary-text-color)
 `;

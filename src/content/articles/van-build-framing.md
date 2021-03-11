@@ -3,7 +3,7 @@ title: "Van Build Series: Framing"
 subtitle: "Building floors, ceilings, and walls..."
 featuredImage: ../../images/house_framing_unsplash.jpg
 featuredImageTitle: "Photo by Avel Chuklanov, sourced from Unsplash"
-date: "2021-01-09"
+date: "2021-03-07"
 ---
 
 I went into this project with minimal wood working or DIY experience. Building the floor, walls, and ceiling proved to be a more difficult and involving task then it first appeared. We completed the following by working MANY hours over the course of a month and half. And by the end of it, I had made enough mistakes that I believe I could complete the same task now in half the time.
