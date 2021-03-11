@@ -1,7 +1,7 @@
 ---
 title: "Van Build Series: Framing"
 subtitle: "Building floors, ceilings, and walls..."
-featuredImage: ../../images/house_framing_unsplash.jpg
+featuredImage: ../../images/van-build-framing/house_framing_unsplash.jpg
 featuredImageTitle: "Photo by Avel Chuklanov, sourced from Unsplash"
 date: "2021-03-07"
 ---
@@ -14,13 +14,13 @@ We decided early on that we would add insulation, if only because it would be a 
 
 We put down the 1/4" Polystyene boards first. 1/4" is about the same height as the grooves in the floor of the Promaster, so this acted as a 'leveling' layer. 
 
-![Polystyrene layer](../../images/floor_layer_1.jpg)
+![Polystyrene layer](../../images/van-build-framing/floor_layer_1.jpg)
 
 Next, we installed 1/2" XPS boards. It was VERY tricky to cut these to fit the many curves, nooks, and crannies of the Promaster floorbed. We used cardboard templates first and cut with scissors to get as close as we could. We then used the templates to trace out the cuts on the foam board (a jigsaw is essential). Additional cuts were eyeballed. We discovered later that thick craft paper is sold in giant rolls at Home Depot and Lowes, this would have been much easier to cut for templating purposes. The majority of the time spent here was creating the templates - it takes FAR longer than you'd expect. The XPS was later attached to the van floor using silicone. 
 
-![XPS layer](../../images/floor_layer_2.jpg)
+![XPS layer](../../images/van-build-framing/floor_layer_2.jpg)
 
-![XPS layer](../../images/floor_layer_2_wheel.jpg)
+![XPS layer](../../images/van-build-framing/floor_layer_2_wheel.jpg)
 
 The last layer is 1/4" plywood. I chose this thickness to try and keep as much ceiling height as possible - every 1/4" of head height counts, especially for our 6' friends. I think I should have chosen 1/2" for better stability. It is fine to walk on, but it would have been nice to have something thicker to attach the later structures (table, benches, cabinets).
 
@@ -28,11 +28,11 @@ Originally I picked up some particle board thinking it would be good enough. The
 
 The plywood was cut using the XPS as templates and then siliconed to the XPS. Unfortunately some of the wood warped in the heat and created small gaps between the plywood pieces. I attempted to fix this with wood glue...but only created a gritty raised mound between the pieces that we later had to sand down. When we put the sheet vinyl on, the gap between the wood pieces showed through. Not a problem, but a blemish that could likely have been avoided with a thicker wood floor.
 
-![Plywood layer](../../images/floor_layer_3.jpg)
+![Plywood layer](../../images/van-build-framing/floor_layer_3.jpg)
 
-![Plywood layer](../../images/floor_layer_3_glue.jpg)
+![Plywood layer](../../images/van-build-framing/floor_layer_3_glue.jpg)
 
-![Vinyl layer](../../images/floor_layer_4.jpg)
+![Vinyl layer](../../images/van-build-framing/floor_layer_4.jpg)
 
 ## Walls
 
@@ -56,7 +56,7 @@ In order to attach the furring strips to the interior frame, we had to do the fo
 - line up the furring strip with the rivet nuts and drill holes through where the rivet nuts met the furring strip (we drew on the rivet nuts with a sharpie and then hit the wood against the rivet nuts to leave a mark)
 - screw through the furring strip into the rivet nut insert
 
-![Wall frame 1](../../images/wall_frame_1.JPEG)
+![Wall frame 1](../../images/van-build-framing/wall_frame_1.JPEG)
 
 I encountered several difficulties here. 
 
@@ -68,21 +68,21 @@ Finally, we were limited by the position of the predrilled holes in the frame. F
 
 We repeated this process for each section of the van frame.
 
-![Wall frame 2](../../images/wall_frame_2.JPEG)
+![Wall frame 2](../../images/van-build-framing/wall_frame_2.JPEG)
 
-![Wall frame 3](../../images/wall_frame_3.jpg)
+![Wall frame 3](../../images/van-build-framing/wall_frame_3.jpg)
 
 Once the frame was up, we cut out cardboard templates to match the shape of the wall and to account for the wheel wells. We transferred the cardboard templates to sheets of 4x8 1/4" plywood sheets with a jigsaw (we cut roughly 2 feet off the top of the sheet). The sheets were attached to the frame with small screws and (thankfully) bent to the shape of the wall, curving inwards slightly. Lastly we primed and painted. The gaps between the walls are later covered by trimming. The large gap between the left walls is covered later by our shower.
 
-![Walls painted](../../images/walls_painted.jpg)
+![Walls painted](../../images/van-build-framing/walls_painted.jpg)
 
 ## Ceiling
 
 Before we attached a frame and covering, we added a MaxAir fan. We cut a hole in the roof with a jigsaw and metal blade (after measuring at least 50 times). We were so excited to install the fan that we didn't pay attention to the weather reports. Not long after we cut a hole in our roof it started raining. So we rushed to finish the fan installation under a plastic tarp. 
 
-![Exterior fan](../../images/fan_exterior.jpg)
+![Exterior fan](../../images/van-build-framing/fan_exterior.jpg)
 
-![Interior fan](../../images/fan_interior.jpg)
+![Interior fan](../../images/van-build-framing/fan_interior.jpg)
 
 The wood frame around the fan holds it in place (it is screwed in from the top).
 

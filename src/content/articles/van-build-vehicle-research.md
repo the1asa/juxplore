@@ -1,7 +1,7 @@
 ---
 title: "Van Build Series: Vehicle research"
 subtitle: "How we narrowed down to a vehicle make and model..."
-featuredImage: ../../images/finishedside.JPEG
+featuredImage: ../../images/van-build-vehicle-research/finishedside.JPEG
 featuredImageTitle: "A side view of the finished conversion"
 date: "2020-11-30"
 ---
@@ -41,7 +41,7 @@ Here is our thought process for each vehicle type, we'll use the above factors t
 
 ## RV type A
 
-![RV type A](../../images/rv_typea.png)
+![RV type A](../../images/van-build-vehicle-research/rv_typea.png)
 
 This is the luxury option. It has all the amenities that we want built in with plenty of space to spare. However, it does not meet our needs in most other respects.
 
@@ -57,7 +57,7 @@ This is the luxury option. It has all the amenities that we want built in with p
 
 ## RV type C
 
-![RV type C](../../images/rv_typec.png)
+![RV type C](../../images/van-build-vehicle-research/rv_typec.png)
 
 This is a scaled down version of a type A. It is a cab built on a van frame. It also has all the amenities built in, but has many of the same limitations as the type A. The comparisons are so similar I only include the differing factors.
 
@@ -68,7 +68,7 @@ This is a scaled down version of a type A. It is a cab built on a van frame. It 
 
 ## Trailer (5th wheel)
 
-![Trailer (5th wheel)](../../images/trailer.jpg)
+![Trailer (5th wheel)](../../images/van-build-vehicle-research/trailer.jpg)
 
 A trailer is designed to be towed by another vehicle. These come in all kinds of sizes, but let's assume that it is around 20 feet in order to be able to house everything we want.
 
@@ -83,7 +83,7 @@ A trailer is designed to be towed by another vehicle. These come in all kinds of
 
 ## Camper van
 
-![Camper van](../../images/finishedside.JPEG)
+![Camper van](../../images/van-build-vehicle-research/finishedside.JPEG)
 
 This is the option we went with. I see a camper van as any vehicle that has been modified for more comfortable long term travel. It might be a passenger van, school bus, delivery vehicle, decommissioned ambulance, hatchback...whatever. There are a few companies that will professionally transform your vehicle into a recreational vehicle using either a custom design or some prefabricated designs they have come up with. But in our search, most companies had waiting lists and charged more than we were comfortable with. So the following pros/cons only take into account doing the 'transformation work' ourselves. 
 

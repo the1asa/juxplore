@@ -1,7 +1,7 @@
 ---
 title: "Van Build Series: Dealerships"
 subtitle: "Visiting dealerships, negotiating, and pulling the trigger..."
-featuredImage: ../../images/car_lot.jpg
+featuredImage: ../../images/van-build-purchase/car_lot.jpg
 featuredImageTitle: "Photo by Markus Winkler, sourced from Unsplash"
 date: "2020-12-29"
 ---
@@ -61,7 +61,7 @@ Because the car was under factory warranty, had the maintenance records, and dro
 
 ## Time and final cost
   
-![Fresh off the lot](../../images/purchased_rear.jpg)
+![Fresh off the lot](../../images/van-build-purchase/purchased_rear.jpg)
 
 All told, it took a little over a month of frenzied searching to find the right vehicle. We found a 2019 Promaster, high roof, 159 inch wheelbase with 23k miles for 25k. With tax, it worked out to just under 26k. I'm sure better deals can be had, but we felt we got pretty lucky with the market near us. To get a better deal we would have needed more time to spend waiting for vehicles to pop up or travelling around the country for vehicles far outside our area. A new, base model starts at ~$40k, so lightly used, if you can find it, is a great deal.
 

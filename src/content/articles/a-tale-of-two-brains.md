@@ -1,6 +1,6 @@
 ---
 title: "A tale of two brains"
-featuredImage: ../../images/brain.jpg
+featuredImage: ../../images/a-tale-of-two-brains/brain.jpg
 featuredImageTitle: 'Photo by Robina Weermeijer, sourced from Unsplash'
 date: "2019-11-22"
 ---
