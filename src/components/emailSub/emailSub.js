@@ -201,7 +201,7 @@ const PostButton = styled.button`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  width: 450px;
+  width: 400px;
   justify-content: center;
   align-items: center;
 `;

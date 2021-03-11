@@ -24,6 +24,7 @@ export default ({ data }) => {
 
         <MDXRenderer>{post.body}</MDXRenderer>
       </PageContainer>
+
       <EmailContainer>
         <EmailSub isArticle />
       </EmailContainer>
