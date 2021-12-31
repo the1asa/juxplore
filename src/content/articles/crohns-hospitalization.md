@@ -47,7 +47,7 @@ I plan to share some of what I have learned here, especially what I have found t
 Some possible future topic categories:
 - Diet and nutrition
 - Healthcare system
-- Natual and experimental therapies for Crohn's
+- Natural and experimental therapies for Crohn's
 - x year retrospectives
 
 I have a hard time asking for and receiving help and haven't expressed all the gratitude I feel. I am fortunate to be surrounded by family and friends and am thankful for all the well wishes, hospital visits, offers for support, and patience in accommodating my new bizarre diets and my ability to talk about them ad nauseum. Many thanks especially to H who jumped in headfirst to help. More to come.

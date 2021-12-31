@@ -100,7 +100,7 @@ The camper van came closest to checking all our boxes. We ended up narrowing our
 
 ## Sprinter vs. Transit vs. Promaster
 
-We knew we wanted a fairly recent model to avoid upfront repairs and maximize resale values. We also wanted to spend under $20k.
+We knew we wanted a fairly recent model to avoid upfront repairs and maximize resale values. We also wanted it to be as affordable as possible.
 
 Cost eliminated the Sprinter. It is the most expensive of the bunch and we did not see any recent models close to our range. Also, Sprinter repair costs tend to be more expensive than equivalent repairs on the other models.
 

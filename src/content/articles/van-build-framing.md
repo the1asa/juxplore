@@ -122,6 +122,6 @@ It's hard to calculate total costs as we built several other things in parallel.
 
 = ~$1550
 
-We have several build posts to come, including building the bench/murphy bed, sink, shower/toilet, and upper cabinets.
+The framing got us about a third of the way there. Our **[last build post](../van-build-interior/)** covers the rest of the van interior.
 
 
